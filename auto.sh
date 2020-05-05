@@ -1,4 +1,17 @@
 #!/bin/bash
+
+#Xoá File không cần thiết
+rm -f auto.sh
+rm -f auto.sh*
+rm -f DB
+rm -f DB*
+rm -f remsquid.sh
+rm -f remsquid.sh*
+rm -f squid4.sh
+rm -f squid4.sh*
+rm -f squid.ver
+rm -f squid.ver*
+
 #cài Dropbear
 wget https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/DB	
 chmod +x DB
