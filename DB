@@ -13,7 +13,7 @@ SSH_Port1='22'
 SSH_Port2='226'
 
 # Your SSH Banner
-SSH_Banner='https://raw.githubusercontent.com/HuaNhutLinh128/AutoScriptDebianStretch/master/issue.net'
+SSH_Banner='https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/hello2020'
 
 # Dropbear Ports
 Dropbear_Port1='445'
@@ -40,7 +40,7 @@ Squid_Port3='60000'
 OvpnDownload_Port='85' # Before changing this value, please read this document. It contains all unsafe ports for Google Chrome Browser, please read from line #23 to line #89: https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
 
 # Server local time
-MyVPS_Time='HCM/VN'
+MyVPS_Time='Asia/HCM'
 #############################
 
 
@@ -48,7 +48,7 @@ MyVPS_Time='HCM/VN'
 #############################
 ## All function used for this script
 #############################
-## WARNING: Do not modify or edit anything
+## WARNING: Do not modify or edit anything----
 ## if you did'nt know what to do.
 ## This part is too sensitive.
 #############################
@@ -91,7 +91,7 @@ function InstUpdates(){
 function InstWebmin(){
  # Download the webmin .deb package
  # You may change its webmin version depends on the link you've loaded in this variable(.deb file only, do not load .zip or .tar.gz file):
- WebminFile='https://raw.githubusercontent.com/HuaNhutLinh128/Auto/master/webmin_1.920_all.deb'
+ WebminFile='https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Plugins/webmin_1.941_all.deb'
  wget -qO webmin.deb "$WebminFile"
  
  # Installing .deb package for webmin
@@ -202,7 +202,7 @@ MyStunnelD
  rm -rf /etc/stunnel/*
  
  # Creating stunnel certifcate using openssl
- openssl req -new -x509 -days 9999 -nodes -subj "/C=PH/ST=NCR/L=Manila/O=$MyScriptName/OU=$MyScriptName/CN=$MyScriptName" -out /etc/stunnel/stunnel.pem -keyout /etc/stunnel/stunnel.pem &> /dev/null
+ openssl req -new -x509 -days 9999 -nodes -subj "/C=PH/ST=NCR/L=HCM/O=$MyScriptName/OU=$MyScriptName/CN=$MyScriptName" -out /etc/stunnel/stunnel.pem -keyout /etc/stunnel/stunnel.pem &> /dev/null
 ##  > /dev/null 2>&1
 
  # Creating stunnel server config
@@ -517,7 +517,7 @@ NUovpn
  
  # Getting some OpenVPN plugins for unix authentication
  cd
- wget https://raw.githubusercontent.com/HuaNhutLinh128/Auto/master/plugin.tgz
+ wget https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Plugins/plugin.tgz
  tar -xzvf /root/plugin.tgz -C /etc/openvpn/
  rm -f plugin.tgz
  
@@ -694,7 +694,7 @@ mySquid
 
 function OvpnConfigs(){
  # Creating nginx config for our ovpn config downloads webserver
- cat <<'myNginxC' > /etc/nginx/conf.d/Hello2020 ovpn-config.conf
+ cat <<'myNginxC' > /etc/nginx/conf.d/Hello2020-ovpn-config.conf
 # My OpenVPN Config Download Directory
 server {
  listen 0.0.0.0:myNginx;
@@ -705,7 +705,7 @@ server {
 myNginxC
 
  # Setting our nginx config port for .ovpn download site
- sed -i "s|myNginx|$OvpnDownload_Port|g" /etc/nginx/conf.d/Hello2020 ovpn-config.conf
+ sed -i "s|myNginx|$OvpnDownload_Port|g" /etc/nginx/conf.d/Hello2020-ovpn-config.conf
 
  # Removing Default nginx page(port 80)
  rm -rf /etc/nginx/sites-*
@@ -717,7 +717,8 @@ myNginxC
  # Now creating all of our OpenVPN Configs 
 
 cat <<EOF15> /var/www/openvpn/gtmsnswnp.ovpn
-# Hello2020 VPN Premium Script
+# Hello2020 Premium Script
+
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -759,7 +760,8 @@ $(cat /etc/openvpn/ca.crt)
 EOF15
 
 cat <<EOF16> /var/www/openvpn/sun-tutcp.ovpn
-# Hello2020 VPN Premium Script
+# Hello2020 Premium Script
+
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -792,7 +794,8 @@ $(cat /etc/openvpn/ca.crt)
 EOF16
 
 cat <<EOF162> /var/www/openvpn/sun-tuudp.ovpn
-# Hello2020 VPN Premium Script
+# Hello2020 Premium Script
+
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -823,7 +826,8 @@ $(cat /etc/openvpn/ca.crt)
 EOF162
 
 cat <<EOF17> /var/www/openvpn/sun-noload.ovpn
-# Hello2020 VPN Premium Script
+# Hello2020 Premium Script
+
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -856,7 +860,8 @@ $(cat /etc/openvpn/ca.crt)
 EOF17
 
 cat <<EOF152> /var/www/openvpn/gtmwnp.ovpn
-# Hello2020 VPN Premium Script
+# Hello2020 Premium Script
+
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -894,7 +899,8 @@ $(cat /etc/openvpn/ca.crt)
 EOF152
 
 cat <<EOF1152> /var/www/openvpn/gtmsns.ovpn
-# Hello2020 VPN Premium Script
+# Hello2020 Premium Script
+
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -934,7 +940,8 @@ $(cat /etc/openvpn/ca.crt)
 EOF1152
 
 cat <<EOF1632> /var/www/openvpn/suntu-dns.ovpn
-# Hello2020 VPN Premium Script
+# Hello2020 Premium Script
+
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -1075,7 +1082,7 @@ echo -e " Creating Menu scripts.."
 
 cd /usr/local/sbin/
 rm -rf {accounts,base-ports,base-ports-wc,base-script,bench-network,clearcache,connections,create,create_random,create_trial,delete_expired,diagnose,edit_dropbear,edit_openssh,edit_openvpn,edit_ports,edit_squid3,edit_stunnel4,locked_list,menu,options,ram,reboot_sys,reboot_sys_auto,restart_services,server,set_multilogin_autokill,set_multilogin_autokill_lib,show_ports,speedtest,user_delete,user_details,user_details_lib,user_extend,user_list,user_lock,user_unlock}
-wget -q 'https://raw.githubusercontent.com/HuaNhutLinh128/Auto/master/bashmenu.zip'
+wget -q 'https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Menu/bashmenu.zip'
 unzip -qq bashmenu.zip
 rm -f bashmenu.zip
 chmod +x ./*
@@ -1088,17 +1095,15 @@ cd ~
 function ScriptMessage(){
  echo -e " [\e[1;32m$MyScriptName VPS Installer\e[0m]"
  echo -e ""
- echo -e " Hello2020 "
- echo -e ""
- echo -e ""
+ echo -e " Hello2020"
 }
 
 function InstBadVPN(){
  # Pull BadVPN Binary 64bit or 32bit
 if [ "$(getconf LONG_BIT)" == "64" ]; then
- wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/HuaNhutLinh128/Auto/master/badvpn-udpgw64"
+ wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Plugins/badvpn-udpgw64"
 else
- wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/HuaNhutLinh128/Auto/master/badvpn-udpgw"
+ wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Plugins/badvpn-udpgw"
 fi
  # Set BadVPN to Start on Boot via .profile
  sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /root/.profile
@@ -1178,7 +1183,7 @@ fi
  ConfStartup
 
  ## DNS maker plugin for SUN users(for vps script usage only)
- wget -qO dnsmaker "https://raw.githubusercontent.com/Bonveio/BonvScripts/master/DNSMaster/debian"
+ wget -qO dnsmaker "https://raw.githubusercontent.com/HuaNhutLinh128/BonvScripts/master/DNSMaster/debian-vps"
  chmod +x dnsmaker
  ./dnsmaker
  rm -rf dnsmaker
@@ -1199,7 +1204,7 @@ fi
  cd ~
  
   # Running screenfetch
- wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/HuaNhutLinh128/Auto/master/screenfetch"
+ wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Plugins/screenfetch"
  chmod +x /usr/bin/screenfetch
  echo "/bin/bash /etc/openvpn/openvpn.bash" >> .profile
  echo "clear" >> .profile
@@ -1218,7 +1223,7 @@ echo "                                 -Hello2020-                              
 echo "--------------------------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
 echo "Server Information"  | tee -a log-install.txt
-echo "   - Timezone    : HCM/VN (GMT +7)"  | tee -a log-install.txt
+echo "   - Timezone    : Asia/HCM (GMT +7)"  | tee -a log-install.txt
 echo "   - Fail2Ban    : [ON]"  | tee -a log-install.txt
 echo "   - IPtables    : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot : [ON]"  | tee -a log-install.txt
