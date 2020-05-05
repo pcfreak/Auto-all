@@ -6,7 +6,7 @@
 #############################
 # Variables (Can be changed depends on your preferred values)
 # Script name
-MyScriptName='Hello2020 Premium Script'
+MyScriptName='Hello2020-Premium Script'
 
 # OpenSSH Ports
 SSH_Port1='22'
@@ -24,8 +24,8 @@ Stunnel_Port1='443' # through Dropbear
 Stunnel_Port2='444' # through OpenSSH
 
 # OpenVPN Ports
-OpenVPN_TCP_Port='1194'
-OpenVPN_UDP_Port='53'
+OpenVPN_TCP_Port='110'
+OpenVPN_UDP_Port='25222'
 
 # Privoxy Ports
 Privoxy_Port1='3356'
@@ -40,7 +40,7 @@ Squid_Port3='60000'
 OvpnDownload_Port='85' # Before changing this value, please read this document. It contains all unsafe ports for Google Chrome Browser, please read from line #23 to line #89: https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
 
 # Server local time
-MyVPS_Time='Asia/HCM'
+MyVPS_Time='Asia/Ho_Chi_Minh'
 #############################
 
 
@@ -48,7 +48,7 @@ MyVPS_Time='Asia/HCM'
 #############################
 ## All function used for this script
 #############################
-## WARNING: Do not modify or edit anything----
+## WARNING: Do not modify or edit anything
 ## if you did'nt know what to do.
 ## This part is too sensitive.
 #############################
@@ -202,7 +202,7 @@ MyStunnelD
  rm -rf /etc/stunnel/*
  
  # Creating stunnel certifcate using openssl
- openssl req -new -x509 -days 9999 -nodes -subj "/C=PH/ST=NCR/L=HCM/O=$MyScriptName/OU=$MyScriptName/CN=$MyScriptName" -out /etc/stunnel/stunnel.pem -keyout /etc/stunnel/stunnel.pem &> /dev/null
+ openssl req -new -x509 -days 9999 -nodes -subj "/C=PH/ST=NCR/L=Manila/O=$MyScriptName/OU=$MyScriptName/CN=$MyScriptName" -out /etc/stunnel/stunnel.pem -keyout /etc/stunnel/stunnel.pem &> /dev/null
 ##  > /dev/null 2>&1
 
  # Creating stunnel server config
@@ -344,11 +344,11 @@ Certificate:
         Version: 3 (0x2)
         Serial Number: 1 (0x1)
     Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=PH, ST=Tarlac, L=Concepcion, O=JohnFordTV, OU=JohnFordTV, CN=DebianVPN/name=John Ford Mangiliman/emailAddress=admin@johnfordtv.me
+        Issuer: C=PH, ST=Tarlac, L=Concepcion, O=Hello2020, OU=Hello2020, CN=DebianVPN/name=John Ford Mangiliman/emailAddress=admin@Hello2020.me
         Validity
             Not Before: Nov 25 08:06:59 2019 GMT
             Not After : Nov 22 08:06:59 2029 GMT
-        Subject: C=PH, ST=Tarlac, L=Concepcion, O=JohnFordTV, OU=JohnFordTV, CN=DebianVPN/name=John Ford Mangiliman/emailAddress=admin@johnfordtv.me
+        Subject: C=PH, ST=Tarlac, L=Concepcion, O=Hello2020, OU=Hello2020, CN=DebianVPN/name=John Ford Mangiliman/emailAddress=admin@Hello2020.me
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -383,7 +383,7 @@ Certificate:
                 50:31:04:C4:7A:47:C1:DA:46:CC:77:38:DE:1C:63:10:40:C3:80:22
             X509v3 Authority Key Identifier:
                 keyid:2D:71:9E:0D:00:4B:5C:23:C8:77:41:77:AF:FE:7C:14:30:A6:8C:2E
-                DirName:/C=PH/ST=Tarlac/L=Concepcion/O=JohnFordTV/OU=JohnFordTV/CN=DebianVPN/name=John Ford Mangiliman/emailAddress=admin@johnfordtv.me
+                DirName:/C=PH/ST=Tarlac/L=Concepcion/O=Hello2020/OU=Hello2020/CN=DebianVPN/name=John Ford Mangiliman/emailAddress=admin@Hello2020.me
                 serial:8C:5B:0D:CB:E1:EA:F3:C4
 
             X509v3 Extended Key Usage:
@@ -448,7 +448,7 @@ VXXsWm6dvHxF9WTF9iMusB8oLstgjXFzPcTm9+M2C62dh/VLL4Vf2MmI2YZKUs4r
 Oca5g+B+q44fLxHMCBUSYt2NlLF5PFLZywpq22SL/8dBXMz5GE90GufBtLiJ/VZf
 XGXEIagImD2ONUSzb5O1AVm0NSOZAHn6RN+zTHa/POT3OT5Q4P6FjKDiY7HsozLN
 a51aDvZmkqxvFV67OkjZPWOU/5z70v5aEbUawWyKntMpjdb//J+fpK2doMorb2NH
-f3s8mL8UGGw2OHrDXalaJigSM50XG28vXTPntY9XOjopV2oOnoR6YNmc+7fz+JOn
+f3s8mL8UGGw2OHrDXalaJigSM50XG28vXTPntY9XOjopV2oOnoR6YNmc+8fz+JOn
 zUOJ7D/TAgMBAAECggEBALidRIRKwCFmIfhKeAfqb4aEqp8wXI0un7c9mA970i9I
 CijtbHh0ZEqRfPvXViqY0R/HBGM195LJDhb7j2BlSYaxOO7cjVNmpaxQnc+va5vf
 uzn1hgC7lQYIeSvgGrkbnDjrG3uHGDcSpLzeq7RamAs/Ee5wszW7dxLuabaXxkH/
@@ -508,7 +508,7 @@ done
  # executed/raised from this script (OpenVPN_TCP_Port/OpenVPN_UDP_Port)
  #
  # Enjoy the new update
- # Script Updated by JohnFordTV
+ # Script Updated by Hello2020
 NUovpn
 
  # setting openvpn server port
@@ -517,7 +517,7 @@ NUovpn
  
  # Getting some OpenVPN plugins for unix authentication
  cd
- wget https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Plugins/plugin.tgz
+ wget https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Files/Plugins/plugin.tgz	
  tar -xzvf /root/plugin.tgz -C /etc/openvpn/
  rm -f plugin.tgz
  
@@ -676,7 +676,7 @@ refresh_pattern ^ftp: 1440 20% 10080
 refresh_pattern ^gopher: 1440 0% 1440
 refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
 refresh_pattern . 0 20% 4320
-visible_hostname JohnFordTV
+visible_hostname Hello2020
 mySquid
 
  # Setting machine's IP Address inside of our Squid config(security that only allows this machine to use this proxy server)
@@ -718,7 +718,6 @@ myNginxC
 
 cat <<EOF15> /var/www/openvpn/gtmsnswnp.ovpn
 # Hello2020 Premium Script
-
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -761,7 +760,6 @@ EOF15
 
 cat <<EOF16> /var/www/openvpn/sun-tutcp.ovpn
 # Hello2020 Premium Script
-
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -795,7 +793,6 @@ EOF16
 
 cat <<EOF162> /var/www/openvpn/sun-tuudp.ovpn
 # Hello2020 Premium Script
-
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -827,7 +824,6 @@ EOF162
 
 cat <<EOF17> /var/www/openvpn/sun-noload.ovpn
 # Hello2020 Premium Script
-
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -861,7 +857,6 @@ EOF17
 
 cat <<EOF152> /var/www/openvpn/gtmwnp.ovpn
 # Hello2020 Premium Script
-
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -900,7 +895,6 @@ EOF152
 
 cat <<EOF1152> /var/www/openvpn/gtmsns.ovpn
 # Hello2020 Premium Script
-
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -941,7 +935,6 @@ EOF1152
 
 cat <<EOF1632> /var/www/openvpn/suntu-dns.ovpn
 # Hello2020 Premium Script
-
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 client
 dev tun
@@ -983,9 +976,9 @@ cat <<'mySiteOvpn' > /var/www/openvpn/index.html
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Simple OVPN Download site by JohnFordTV -->
+<!-- Simple OVPN Download site by Hello2020 -->
 
-<head><meta charset="utf-8" /><title>JohnFordTV OVPN Config Download</title><meta name="description" content="MyScriptName Server" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /><meta name="theme-color" content="#000000" /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet"></head><body><div class="container justify-content-center" style="margin-top:9em;margin-bottom:5em;"><div class="col-md"><div class="view"><img src="https://openvpn.net/wp-content/uploads/openvpn.jpg" class="card-img-top"><div class="mask rgba-white-slight"></div></div><div class="card"><div class="card-body"><h5 class="card-title">Config List</h5><br /><ul class="list-group"><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Sun <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small> UDP Server For TU/CTC/CTU Promos</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/sun-tuudp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Sun <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small> TCP+Proxy Server For TU/CTC/CTU Promos</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/sun-tuudp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Globe/TM <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small> For EasySURF/GoSURF/GoSAKTO Promos with WNP,SNS,FB and IG freebies</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/gtmwnp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Sun <span class="badge light-blue darken-4">Modem</span><br /><small> Without Promo/Noload (Reconnecting Server, Use Low-latency VPS for fast reconnectivity)</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/sun-noload.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li></ul></div></div></div></div></body></html>
+<head><meta charset="utf-8" /><title>Hello2020 OVPN Config Download</title><meta name="description" content="MyScriptName Server" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /><meta name="theme-color" content="#000000" /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet"></head><body><div class="container justify-content-center" style="margin-top:9em;margin-bottom:5em;"><div class="col-md"><div class="view"><img src="https://openvpn.net/wp-content/uploads/openvpn.jpg" class="card-img-top"><div class="mask rgba-white-slight"></div></div><div class="card"><div class="card-body"><h5 class="card-title">Config List</h5><br /><ul class="list-group"><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Sun <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small> UDP Server For TU/CTC/CTU Promos</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/sun-tuudp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Sun <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small> TCP+Proxy Server For TU/CTC/CTU Promos</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/sun-tuudp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Globe/TM <span class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small> For EasySURF/GoSURF/GoSAKTO Promos with WNP,SNS,FB and IG freebies</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/gtmwnp.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li><li class="list-group-item justify-content-between align-items-center" style="margin-bottom:1em;"><p>For Sun <span class="badge light-blue darken-4">Modem</span><br /><small> Without Promo/Noload (Reconnecting Server, Use Low-latency VPS for fast reconnectivity)</small></p><a class="btn btn-outline-success waves-effect btn-sm" href="http://IP-ADDRESS:NGINXPORT/sun-noload.ovpn" style="float:right;"><i class="fa fa-download"></i> Download</a></li></ul></div></div></div></div></body></html>
 mySiteOvpn
  
  # Setting template's correct name,IP address and nginx Port
@@ -1015,12 +1008,12 @@ function ConfStartup(){
  echo -e "0 4\t* * *\troot\treboot" > /etc/cron.d/b_reboot_job
 
  # Creating directory for startup script
- rm -rf /etc/johnfordtv
- mkdir -p /etc/johnfordtv
- chmod -R 755 /etc/johnfordtv
+ rm -rf /etc/Hello2020
+ mkdir -p /etc/Hello2020
+ chmod -R 755 /etc/Hello2020
  
  # Creating startup script using cat eof tricks
- cat <<'EOFSH' > /etc/johnfordtv/startup.sh
+ cat <<'EOFSH' > /etc/Hello2020/startup.sh
 #!/bin/bash
 # Setting server local time
 ln -fs /usr/share/zoneinfo/MyVPS_Time /etc/localtime
@@ -1038,33 +1031,33 @@ iptables -A INPUT -s $(wget -4qO- http://ipinfo.io/ip) -p tcp -m multiport --dpo
 /usr/local/sbin/delete_expired &> /dev/null
 exit 0
 EOFSH
- chmod +x /etc/johnfordtv/startup.sh
+ chmod +x /etc/Hello2020/startup.sh
  
  # Setting server local time every time this machine reboots
- sed -i "s|MyVPS_Time|$MyVPS_Time|g" /etc/johnfordtv/startup.sh
+ sed -i "s|MyVPS_Time|$MyVPS_Time|g" /etc/Hello2020/startup.sh
 
  # 
  rm -rf /etc/sysctl.d/99*
 
  # Setting our startup script to run every machine boots 
- cat <<'FordServ' > /etc/systemd/system/johnfordtv.service
+ cat <<'FordServ' > /etc/systemd/system/Hello2020.service
 [Unit]
-Description=JohnfordTV Startup Script
+Description=Hello2020 Startup Script
 Before=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash /etc/johnfordtv/startup.sh
+ExecStart=/bin/bash /etc/Hello2020/startup.sh
 RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
 FordServ
- chmod +x /etc/systemd/system/johnfordtv.service
+ chmod +x /etc/systemd/system/Hello2020.service
  systemctl daemon-reload
- systemctl start johnfordtv
- systemctl enable johnfordtv &> /dev/null
+ systemctl start Hello2020
+ systemctl enable Hello2020 &> /dev/null
  systemctl enable fail2ban &> /dev/null
  systemctl start fail2ban &> /dev/null
 
@@ -1095,7 +1088,6 @@ cd ~
 function ScriptMessage(){
  echo -e " [\e[1;32m$MyScriptName VPS Installer\e[0m]"
  echo -e ""
- echo -e " Hello2020"
 }
 
 function InstBadVPN(){
@@ -1223,7 +1215,7 @@ echo "                                 -Hello2020-                              
 echo "--------------------------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
 echo "Server Information"  | tee -a log-install.txt
-echo "   - Timezone    : Asia/HCM (GMT +7)"  | tee -a log-install.txt
+echo "   - Timezone    : Asia/Ho_Chi_Minh (GMT +7)"  | tee -a log-install.txt
 echo "   - Fail2Ban    : [ON]"  | tee -a log-install.txt
 echo "   - IPtables    : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot : [ON]"  | tee -a log-install.txt
@@ -1251,7 +1243,7 @@ echo ""  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "OpenVPN Configs Download"  | tee -a log-install.txt
 echo "   - Download Link           : http://$IPADDR:85/configs.zip"  | tee -a log-install.txt
-echo " Hello2020"  | tee -a log-install.txt
+echo " ©Hello2020"  | tee -a log-install.txt
 echo " Please Reboot your VPS"
 
  # Clearing all logs from installation
