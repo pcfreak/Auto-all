@@ -55,6 +55,6 @@ chmod +x shadowsocks-all.sh
 ./shadowsocks-all.sh 
 
 #cài BBR Plus
-wget –no-check-certificate -O bbrplus.sh https://github.com/cx9208/Linux-NetSpeed/raw/master/tcp.sh
-chmod +x bbrplus.sh
-./bbrplus.sh
+wget –no-check-certificate -O tcp.sh https://github.com/cx9208/Linux-NetSpeed/raw/master/tcp.sh
+chmod +x tcp.sh
+./tcp.sh
