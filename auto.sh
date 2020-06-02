@@ -41,6 +41,10 @@ sudo apt-get update -y
 sudo apt-get remove speedtest-cli
 sudo apt-get install speedtest
 
+#cài vnstat
+sudo apt install vnstat -y
+vnstat -u
+
 #cài Stunnel
 wget https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/Squid4%20Debian9/remsquid.sh
 chmod +x remsquid.sh
