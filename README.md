@@ -8,3 +8,5 @@ nano /etc/shadowsocks-libev/config.json
 sudo /etc/init.d/shadowsocks-libev stop
 
 sudo /etc/init.d/shadowsocks-libev start
+
+sudo nano /etc/vnstat.conf
