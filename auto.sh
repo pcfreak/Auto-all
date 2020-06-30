@@ -23,6 +23,12 @@ wget -O /etc/banner "https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/m
 service ssh restart
 service dropbear restart
 
+#Tạo User
+cd /usr/local/sbin/
+wget https://raw.githubusercontent.com/HuaNhutLinh128/Auto-all/master/b
+chmod +x ./*
+cd ~
+
 # xoá speedtest
 cd /usr/local/sbin/
 rm -f speedtest
