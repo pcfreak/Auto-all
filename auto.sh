@@ -39,6 +39,7 @@ sed -i 's|http_port|listen-address|g' ./*
 cd ~
 
 #cài speedtest
+sudo apt-get install lsb-release -y
 sudo apt-get install gnupg1 apt-transport-https dirmngr -y
 export INSTALL_KEY=379CE192D401AB61
 export DEB_DISTRO=$(lsb_release -sc)
